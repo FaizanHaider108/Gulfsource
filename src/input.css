@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply font-Montserrat leading-tight text-MarianShade1;
+  min-height:100vh;
+}
+section {
+  @apply px-9 lg:px-33 2xl:px-52;
+}
+h1 {
+  @apply font-bold text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl max-w-[27ch] leading-tight;
+}
+h2 {
+  @apply uppercase text-SaudiFlagTint2 font-bold text-base;
+}
+input,textarea{
+  @apply border-MarianTint4 border-[1px] py-2 px-4 text-13; 
+}
+img{
+  @apply w-fit h-auto;
+}
+
+.flex-center{
+  @apply flex items-center justify-center;
+}
+
+
+/* ---- gradient ---- */
+
+.gradient {
+  @apply font-extrabold text-transparent bg-gradient-to-r from-PrimaryGradientClr1 to-PrimaryGradientClr2 bg-clip-text transition-all duration-500;
+}
+.hover-gradient:hover {
+  @apply gradient;
+}
+.blueGreenGradient {
+  @apply font-extrabold text-transparent bg-gradient-to-r from-MarianBlue to-SaudiFlagGreen bg-clip-text transition-all duration-500;
+}
+.product-service-nav-item:hover p.title{
+  @apply gradient;
+}
+
+.gradient-line {
+  @apply bg-gradient-to-r from-PrimaryGradientClr1 to-PrimaryGradientClr2 h-[2px] my-2 2xl:my-4;
+}
+
+.gradient-border {
+  @apply text-13 font-bold  max-w-48  transition-all h-[2.75rem] border-[1px] hover:border-[3px] px-8 py-[0.625rem];
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #2ca8dc, #d0df8a);
+}
+
+
+/* ---- Nav hamburger Menu ---- */
+
+.bar {
+  @apply w-7 h-[2px] bg-white block mb-1;
+}
+.bar.clicked:first-child {
+  transform: rotate(45deg) translate(0.14em, 0.5em);
+  transition: ease-out 0.5s;
+}
+.bar.clicked:nth-child(2) {
+  transform: scale(0.05);
+  transition: ease-out 0.5s;
+}
+.bar.clicked:last-child {
+  transform: rotate(135deg) translate(-0.05em, 0.42em);
+  transition: ease-out 0.5s;
+}
+.bar.unclicked {
+  transform: rotate(0) translate(0);
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+.menu {
+  @apply text-MarianTint4 font-semibold text-13 2xl:text-base mx-auto uppercase md:py-0 md:max-h-max md:opacity-100;
+}
+.navItem {
+  @apply p-2 py-4 md:p-6 md:py-8;
+}
+.navLink {
+  @apply transition-all duration-300 hover-gradient;
+}
+.bgBlur {
+  @apply bg-MarianShade1 bg-opacity-55 backdrop-blur-md;
+}
+
+/* ---- hero section backgroundImg ---- */
+
+.backgroundImg {
+  background: url(/homePage/hero-bg-home.webp);
+  @apply bg-no-repeat bg-center bg-cover h-full min-h-[500px] 2xl:h-[600px];
+}
+
+.industrial-card .shadow-div{
+  @apply hidden;
+}
+
+.transition-timing{
+  transition-timing-function:cubic-bezier(0.01, 0.85, 0.45, 1);
+}
+
+
+@media (min-width: 451px) {
+  .industrial-card:nth-child(2n+1) .shadow-div{
+    @apply hidden;
+  }
+  .industrial-card:not(:nth-child(2n+1)) .shadow-div {
+    @apply block;
+  }
+}
+
+
+
+@media (min-width: 768px) {
+  .menu {
+    @apply flex shadow-none m-0 w-auto;
+  }
+  .navItem {
+    @apply text-MarianTint4 px-4;
+  }
+  .industrial-card:nth-child(3n+1) .shadow-div{
+    @apply hidden;
+  }
+  .industrial-card:not(:nth-child(3n+1)) .shadow-div {
+    @apply block;
+  }
+}
+
+
+
+@media (min-width: 1280px) {
+  .industrial-card:nth-child(5n+1) .shadow-div{
+    @apply hidden;
+  }
+  .industrial-card:not(:nth-child(5n+1)) .shadow-div {
+    @apply block;
+  }
+}
+
+@media (hover:hover){
+  .video-container:hover .video-button{
+    @apply opacity-100;
+  }
+}
+@media (hover:none){
+  .touch-hidden{
+    @apply opacity-0;
+  }
+  .touch-visible{
+    @apply opacity-100;
+  }
+}
