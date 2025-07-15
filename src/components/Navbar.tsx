@@ -233,7 +233,7 @@ export default function Navbar() {
               Vision
             </NavLink>
           </li>
-          <li className="navItem">
+          {/* <li className="navItem">
             <NavLink
               to="certifications"
               className={({ isActive }) =>
@@ -243,7 +243,7 @@ export default function Navbar() {
             >
               Certifications
             </NavLink>
-          </li>
+          </li> */}
           <li className="navItem">
             <NavLink
               to="contact-us"
