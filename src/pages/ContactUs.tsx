@@ -121,7 +121,7 @@ export default function ContactUs() {
                 />
                 <p className="font-bold">Email</p>
               </div>
-              <p>bdm@gulfsource.net</p>
+              <p>sales@gulfsource.sa</p>
             </div>
             <div className="mb-14">
               <div className="mb-4">
